@@ -7,10 +7,10 @@ CGDD 3103App Extentsion and Scripting Project 3
 -[List of Requirements Met](list-of-requirements-met)
 
 
-#How To Play
+# How To Play
 
 
-#List of Requirments Met
+# List of Requirments Met
 
 # Checklist of Project 3 Requirements-Table of Contents
 -[Objectives](#objectives)
@@ -24,15 +24,13 @@ CGDD 3103App Extentsion and Scripting Project 3
 -[Notes](notes)
 
 -[Submission Instructions](submission-instructions)
-
-#Explanation of ReadMe
-  
  
-#Objectives
+ 
+# Objectives
 
 Practice using scripts to extend a game to be a more user-friendly game!
 
-#Mandatory Requirements
+# Mandatory Requirements
 
     Using Unity, create any game you want to. Only a playable game will be counted!
 
@@ -46,11 +44,11 @@ Practice using scripts to extend a game to be a more user-friendly game!
 -     If it is a new game, load the appropriate settings and information from new game files.
 -     If it is a resume game situation, load the inventory information and game settings from the most recent time the game was quit. 
 
-#Notes:
+# Notes:
 
 For the file processing, you may use text files with stream reader/writer, XML file processing or the binary formatter with serialized/de-serialized files. You may also use JSON file processing.  PlayerPrefs is not considered to be file processing. 
 
-#Optional Requirements (Maximum 50%. You can do more than 50%, I will choose the best 50% ones for you.)
+# Optional Requirements (Maximum 50%. You can do more than 50%, I will choose the best 50% ones for you.)
 
 - [ ]Create a first-person or third-person camera controlled by a keyboard and/or mouse. The camera needs to be able to translate and rotate. Make sure you create a health display for your character. (10%)
 - [ ]Create 2D GUIs to change the keys for controlling the camera. (10%)
@@ -84,7 +82,7 @@ If you missed the Demo, you may lose up to 10%
 You will lose up to 10% if an incorrect Unity version is used.
 
 
-#Extra Credit (Maximum 20%, You can do more than 20%, I will choose the best 20% for you.)
+# Extra Credit (Maximum 20%, You can do more than 20%, I will choose the best 20% for you.)
 
 - [ ]Make a login menu for different players. ONLY use ONE file to store the inventory information for different players, and another ONE file to store the game settings for different players. (10%)
 Use a script to create another player in the game at any time. Split the screen by half for two players, and allow the players to set the keyboards or mouse for the game. (10%)
@@ -92,7 +90,7 @@ Use a script to create another player in the game at any time. Split the screen 
 - [ ]Use at least 2 different video player effects, 1 as a component of the camera, and another as a texture component on a game object.  (5%)
 
 
-#Submission Instructions
+# Submission Instructions
 
 The .zip file you submit should include:
 
