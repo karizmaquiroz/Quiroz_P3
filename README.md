@@ -3,6 +3,7 @@ CGDD 3103App Extentsion and Scripting Project 3
 
 # Explanation of ReadMe-Table of Contents
 -[How To Play](how-to-play)
+
 -[List of Requirements Met](list-of-requirements-met)
 
 
@@ -13,10 +14,15 @@ CGDD 3103App Extentsion and Scripting Project 3
 
 # Checklist of Project 3 Requirements-Table of Contents
 -[Objectives](#objectives)
+
 -[Mandatory Requirements](mandatory-requirements)
+
 -[Optional Requirements](optional-requirements)
+
 -[Extra Credit](extra-credit)
+
 -[Notes](notes)
+
 -[Submission Instructions](submission-instructions)
 
 #Explanation of ReadMe
