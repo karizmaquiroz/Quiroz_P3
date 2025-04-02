@@ -1,16 +1,16 @@
 # Quiroz_P3
-CGDD 3103App Extentsion and Scripting Project 3
+ ##CGDD 3103App Extentsion and Scripting Project 3
 
-# Explanation of ReadMe-Table of Contents
+## Explanation of ReadMe-Table of Contents
 -[How To Play](how-to-play)
 
 -[List of Requirements Met](list-of-requirements-met)
 
 
-# How To Play
+### How To Play
 
 
-# List of Requirments Met
+### List of Requirments Met
 
 # Checklist of Project 3 Requirements-Table of Contents
 -[Objectives](#objectives)
