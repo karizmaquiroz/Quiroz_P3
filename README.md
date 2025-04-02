@@ -95,7 +95,7 @@ Use a script to create another player in the game at any time. Split the screen 
 The .zip file you submit should include:
 
   A Windows executable file (a build with the associated files)
-  \Your source files (Unity and C#)
-  \A video of your game demo with explanations of which requirements you have met.
-  \A readme file to explain how to play your game, and list the requirements you have met.
-  \*You will lose up to 10% if you miss any of these required components.
+  Your source files (Unity and C#)
+  A video of your game demo with explanations of which requirements you have met.
+  A readme file to explain how to play your game, and list the requirements you have met.
+  *You will lose up to 10% if you miss any of these required components.
