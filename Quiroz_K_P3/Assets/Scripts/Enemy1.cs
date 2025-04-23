@@ -1,32 +1,39 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
-using UnityEditor.Experimental.GraphView;
-using UnityEngine;
 using UnityEngine.AI;
+
+
+//Enemy guards waypoints when distance >10 from player
+//distance < 2 from player, punches/or/collides for attacks
+
+
 
 
 public class Enemy1 : MonoBehaviour
 {
+    public enum Behaviors { Idle, Guard, Combat, Flee };
     //for navmesh (waypoints)
     public List<Transform> wayPoint;
     NavMeshAgent navMeshAgent;
     public int currentWayPointIndex = 0; //there is 5 way points
 
 
-    //public enum Behaviors {Idle, Guard,Combat, Flee};
-    //public Behaviors aiBehaviors = Behaviors.Idle;
+    public Behaviors aiBehaviors = Behaviors.Idle;
 
-    bool ReversePath = false;
+    float nextAttack = 5.0f;
+
+
+    //bool ReversePath = false;
     Vector3 Destination;
     float Distance;
 
     public Transform Player;
 
-    //public bool isSus = false;
-    //public bool isInRange = false;
+    public bool isSus = false;
+    public bool isInRange = false;
 
-    public GameObject EnemyBullet;
+
 
 
     private void Start()
@@ -38,11 +45,13 @@ public class Enemy1 : MonoBehaviour
     {
         Walking();
         SearchForTarget();
+        RunBehaviors();
 
     }
 
 
-    /* void RunBehaviors()
+
+     void RunBehaviors()
      {
          switch (aiBehaviors)
          {
@@ -53,17 +62,14 @@ public class Enemy1 : MonoBehaviour
                  RunGuardNode();
                  break;
              case Behaviors.Combat:
-                 RunCombatNode();
-                 break;
-             case Behaviors.Flee:
-                 RunFleeNode();
-                 break;
+                RunCombatNode();
+                break;
 
          }
      }
 
 
-     void CHangeBahavior(Behaviors newBehaviors)
+     void ChangeBahavior(Behaviors newBehaviors)
      {
          aiBehaviors = newBehaviors;
          RunBehaviors();
@@ -78,25 +84,67 @@ public class Enemy1 : MonoBehaviour
      {
          Guard();
      }
+    void RunCombatNode()
+    {
+        Combat();
+    }
 
-     void RunCombatNode()
-     {
-         if (FightRange)
-         {
-             RangedAttack();
-         }
-         else { return; }
-     }
-     void RunFleeNode()
-     {
-         Flee();
-     }
 
-     void Idle()
-     {
+    void Idle()
+    {
+        Destination = GameObject.FindGameObjectWithTag("Player").transform.position;
+        navMeshAgent.SetDestination(Destination);
+        Distance = Vector3.Distance(gameObject.transform.position, Destination);
+        if (Distance < 10.0f)
+        {
+            ChangeBahavior(Behaviors.Guard);
+        }
+    }
 
-     }
-    */
+    void Guard()
+    {
+        if (isSus)
+        {
+            SearchForTarget();
+            if (Distance < 4.00f)
+            {
+                isInRange = true;
+                ChangeBahavior(Behaviors.Combat);
+            }
+        }
+        else
+        {
+            Walking();
+        }
+    }
+
+    //method for chase & attacking player PUNCHING
+    void Combat()
+    {
+        Destination = GameObject.FindGameObjectWithTag("Player").transform.position;
+        navMeshAgent.SetDestination(Destination);
+        Distance = Vector3.Distance(gameObject.transform.position, Destination);
+        if (isInRange)
+        {
+            if (2.0f >= Distance && Distance <= 4.0f)
+            {
+                if (Time.time >= nextAttack)
+                {
+                    nextAttack = Time.time + 2.0f;
+                    RangedAttack();
+                }
+            }
+          
+        }
+        else if (Distance > 4.0f)
+        {
+            isInRange = false;
+            SearchForTarget();
+        }
+    }
+
+    
+    
 
 
     void Walking()
@@ -115,35 +163,6 @@ public class Enemy1 : MonoBehaviour
 
     }
 
-    //method for chase & attacking player PUNCHING
-    void Combat()
-    {
-        //chase player
-
-        RangedAttack();
-    }
-
-    //flee should be called when enemy health is below <=25 
-    //currently health not set
-
-    /*
-void Flee()
-{
-    for (int fleePoint = 0; fleePoint < wayPoint.Count; fleePoint++)
-    {
-        Distance = Vector3.Distance(gameObject.transform.position, wayPoint[fleePoint].position);
-
-        if(Distance > 10.00f)
-        {
-            Destination = wayPoint[currentWayPointIndex].position;
-            navMeshAgent.SetDestination(Destination);
-            break;
-        }
-
-    }
-}
-*/
-
 
     void SearchForTarget()
     {
@@ -156,26 +175,17 @@ void Flee()
             //enmey >10 units from charcter -----> guard waypoints
             Walking();
         }
-        else if (Distance <= 2)
+        else if (Distance <= 4)
         {
             //enemy <2 units from charcter -------> chase & attack
-            Combat();
+            isInRange = true;
 
         }
-
-
-
     }
 
     void RangedAttack()
     {
 
-        //Should PUNCH / Collide with player
-
-
-        // currently can shoot at player
-        GameObject newProjectile;
-        newProjectile = Instantiate(EnemyBullet, transform.position, Quaternion.identity) as GameObject;
-        //
+        //Should PUNCH // Collide with player
     }
 }

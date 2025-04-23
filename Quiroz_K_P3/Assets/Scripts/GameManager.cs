@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject GameScreen0; 
+    //public GameObject GameScreen0; 
     public GameObject MainMenuUI; 
-    public GameObject CreditUI;
+    //public GameObject CreditUI;
    
 
     public void Awake()
@@ -24,19 +24,21 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+
     public void quit() //inside gameOver when pressed application quits
     {
-        SceneManager.LoadScene("Credits");
+        //SceneManager.LoadScene("Credits");
 
         Application.Quit();
     }
 
-
+    /*
     public void Exit()
     {
         SceneManager.LoadScene("MainMenu");
 
     }
+    */
 
 
     public void startGame()
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+    /*
     public void creditButton()
     {
         SceneManager.LoadScene("Credits");
@@ -62,4 +65,5 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Back in MainMenu scene");
 
     }
+    */
 }
