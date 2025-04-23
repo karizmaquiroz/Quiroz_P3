@@ -1,6 +1,9 @@
 # Quiroz_P3
 # CGDD 3103 App Extension and Scripting Project 3
 
+For this assignment, anything checked off is what was done for project 3. Some features do not work fully. 
+
+
 ## Explanation of ReadMe-Table of Contents
 -[How To Play](how-to-play)
 
@@ -34,9 +37,9 @@ Practice using scripts to extend a game to be a more user-friendly game!
 
 Using Unity, create any game you want to. Only a playable game will be counted!
 
-- [ ] Create at least one background sound AND one sound effect for the game. (10%)
+- [x] Create at least one background sound AND one sound effect for the game. (10%)
 -  Make sure the audio clips can be managed by your scripts. 
-- [ ] Create a game setting menu to configure the volume for all the audios used in the game, change resolutions, switch fullscreen/window, shadow types, etc. (10%)
+- [x] Create a game setting menu to configure the volume for all the audios used in the game, change resolutions, switch fullscreen/window, shadow types, etc. (10%)
 -  No less than 5 different configurable options. 
 - [ ] Save inventory information into a file and make the game read it before running. (10%)
 - [ ] Save the game settings to a file and make the game read it before running. (10%)
@@ -50,28 +53,28 @@ For the file processing, you may use text files with stream reader/writer, XML f
 
 ### Optional Requirements (Maximum 50%. You can do more than 50%, I will choose the best 50% ones for you.)
 
-- [ ] Create a first-person or third-person camera controlled by a keyboard and/or mouse. The camera needs to be able to translate and rotate. Make sure you create a health display for your character. (10%)
+- [x] Create a first-person or third-person camera controlled by a keyboard and/or mouse. The camera needs to be able to translate and rotate. Make sure you create a health display for your character. (10%)
 - [ ] Create 2D GUIs to change the keys for controlling the camera. (10%)
 - NOT changing the profile, you need to be able to change each key individually in the game 
-- [ ] Create at least one 3D GUI menu. The menu could be a health bar, a button, etc. (5%)
+- [x] Create at least one 3D GUI menu. The menu could be a health bar, a button, etc. (5%)
 - A 3D GUI menu needs to face the camera all the time. 
-- [ ] Use a script to create an inventory storage system with a minimum of 6 different items. (10%)
+- [x] Use a script to create an inventory storage system with a minimum of 6 different items. (10%)
 - The script should use a linked list to store the inventory items.
 - You can decide the maximum size of the storage and how many items you want to show on screen.
 - In the storage, you need to show the name and amount of the items collected.
 - If all of the one collected items are used, you should delete that item from the inventory storage, and shift the rest of the items to fill the empty spot. 
-- [ ] The inventory storage menu should be controlled by the user to show and close on the screen. (5%)
-- [ ] Use a script to create a customizable quick item storage with no less than 3 items. (10%)
+- [x] The inventory storage menu should be controlled by the user to show and close on the screen. (5%)
+- [x] Use a script to create a customizable quick item storage with no less than 3 items. (10%)
 - Users can choose any 3 different items stored in the inventory storage and put them into the quick item storage.
 - Users should be able to define and change the order of the quick item storage.
 - The script should use a linked list to store the inventory items. You also need to show the item name and amount in the quick item storage.
 - The items in the quick item storage should be able to be accessed (used) by pressing 1, 2, or 3 keys on the keyboard or mouse click. The quick item storage menu should stay on the screen all the time.
 - After accessing (using) on quick item, you need to update the amount of the item in both quick item storage and inventory storage. If all of one quick item is used, you should delete that item from the quick item storage, and show empty on that spot. You also need to delete that item from the inventory storage, see the above requirements. 
-- [ ] You need to have at least 3 different healthcare items that can increase health, such as increase 10, 20, or 30, and 3 different weapon items, such as bullets with colors of red, green, or blue. (5%)
+- [x] You need to have at least 3 different healthcare items that can increase health, such as increase 10, 20, or 30, and 3 different weapon items, such as bullets with colors of red, green, or blue. (5%)
 - When accessing/using health items, you should update your health. When accessing/using weapon items, you should be able to shoot different bullets. 
-- [ ] Create at least 8 waypoints for AI characters and 15 different obstacles on the floor and BAKE the navigation mesh. (5%)
+- [x] Create at least 8 waypoints for AI characters and 15 different obstacles on the floor and BAKE the navigation mesh. (5%)
 - The floor should be a terrain object that is between 300x300 and 500x500 and must be appropriately painted. 
-- [ ] Create at least 2 AI enemies. (20%)
+- [x] Create at least 2 AI enemies. (20%)
 - One of them will be idle when it is more than 10 units from your character. If it is less than 4 units from your character, it will shoot 2 bullets at you. Your health will be decreased if the bullets hit. If your character escapes and the distance between the enemy and the player is greater than 10, the AI enemy will return to its original guard position.
 - The other AI enemy will guard along the 5 waypoints when it is more than 10 units from your character. If it is less than 2 units from you it will attack your character by punching, your health will be decreased. If your character escapes, the enemy AI will resume its course.  
 - [ ] Create at least 1 AI friend. It will always follow your character and help you attack the enemies when the enemies are closer than 5 units from YOUR character. (15%)
